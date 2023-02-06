@@ -26,7 +26,11 @@ $(document).ready(function(){
     })
 
     $('a').click(function() {
-        $('ul')
+        $('ul').fadeIn()
     })
+
+    $('ul').on('click',function(){
+        $('li').css("text-decoration","line-through")
+    });
 
 })

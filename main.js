@@ -28,9 +28,20 @@ $(document).ready(function(){
     $('a').click(function() {
         $('ul').fadeIn()
     })
+    
+    $('form').on('submit', function(e) {
+        e.preventDefault();
 
-    $('ul').on('click',function(){
-        $('li').css("text-decoration","line-through")
-    });
+        const listaTarefa = $('#lista-tarefa').val();
+        const novoItem = $('<li></li>');
+        $(`<li>${listaTarefa}</li>`).appendTo(novoItem);
+        $(novoItem).appendTo('ul');
+        $("li").click(function () {
+            $(this).css('text-decoration','line-through');
+        })
+        $('#lista-tarefa').val("");
+    })
+    
+
 
 })
